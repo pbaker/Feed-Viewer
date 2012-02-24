@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>channelvision.tv</title>
+        <style type="text/css">
+            .opacity-70 {
+                -moz-opacity: 0.7;
+                /** IE8 CSS2.1 parser **/
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+                _filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+                opacity: .70 /*!important;*/
+                    /*filter: alpha(opacity=70); /** IE6,7 only **/
+            }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                border: 0 none;
+                overflow: hidden;
+                height: 100%;
+            }
+
+            #mask{
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                z-index:20000;
+                background-color:white;
+            }
+            #loading{
+                position:absolute;
+                left:45%;
+                top:40%;
+                padding:2px;
+                z-index:20001;
+                height:auto;
+            }
+            #loading img {
+                margin-bottom:2px;
+                background:#000 !important;
+            }
+            #loading .loading-indicator{
+                background:transparent;
+                color:#555;
+                font:bold 13px tahoma,arial,helvetica;
+                padding:10px;
+                margin:0;
+                text-align:center;
+                height:auto;
+            }
+        </style>        
+
+        <!-- All CSS -->
+        <link rel="stylesheet" type="text/css" href="ext-3.1+/resources/css/ext-all.css" />
+		<!--link rel="stylesheet" id="theme" type="text/css" href="ext-3.1+/resources/css/xtheme-black.css" /-->		
+        <link rel="stylesheet" type="text/css" href="css/feed-viewer.css" />
+        <link rel="stylesheet" type="text/css" href="http://tools.dottoro.com/public/highlighter/dottoro-highlighter-v2.css" />
+
+    </head>
+    <body>
+        <div id="mask" class="opacity-70"></div>
+        <div id="loading">
+            <div class="loading-indicator">
+                <img alt="loading..." src="images/extanim64.gif" width="64" height="64" style="margin-right:8px;" align="absmiddle"/> Loading...<br />
+            </div>
+        </div>
+
+        <!-- EXT JS & CSS -->
+        <script type="text/javascript" src="ext-3.1+/adapter/ext/ext-base.js"></script>
+        <!--script type="text/javascript" src="ext-3.1+/my-ext-all-debug.js"></script-->
+        <!--script type="text/javascript" src="ext-3.1+/ext-all.js"></script-->
+		<?PHP require_once("php/ext_loader.php");?>
+        <script type="text/javascript" src="ext-3.1+/examples/ux/TabCloseMenu.js"></script>
+
+
+        <script type="text/javascript">
+		
+            Ext.onReady(function() {
+                var loading = null;
+                var mask = null;
+                Ext.QuickTips.init();
+                loading = Ext.get('loading');
+                mask = Ext.get('mask');
+                mask.setOpacity('0.8');
+                mask.shift({
+                    xy: loading.getXY(),
+                    width: loading.getWidth(),
+                    height: loading.getHeight(),
+                    remove: true,
+                    duration: '0.8',
+                    opacity: '0.3',
+                    easing: 'bounceOut',
+                    callback: function() {
+                        loading.fadeOut({
+                            duration: '0.1',
+                            remove: true
+                        })
+                    }
+                });
+            });
+        </script>
+
+        <!-- Application Support Files -->
+        <script type="text/javascript" src="state/save-state.php"></script>
+        <script type="text/javascript" src="state/get-state.php"></script>
+        <script type="text/javascript" src="state/SessionProvider.js"></script>
+        <script type="text/javascript" src="ux/Ext.ux.nsXmlReader.js"></script>
+		<script type="text/javascript" src="ux/Ext.ux.ThemeCombo.js"></script>
+
+        <!-- Feed Viewer JS & CSS -->
+        <script type="text/javascript" src="js/FeedGrid.js"></script>
+        <script type="text/javascript" src="js/FeedPanel.js"></script>
+        <script type="text/javascript" src="js/FeedWindow.js"></script>
+        <script type="text/javascript" src="js/MainPanel.js"></script>
+        <script type="text/javascript" src="js/FeedViewer.js"></script>
+        <script type="text/javascript" src="js/FeedPlayer.js"></script>
+
+        <!-- FeedPlayer JS & CSS -->
+        <!--
+        <script type="text/javascript" src="uxMedia213/uxmedia.js"></script>
+        <script type="text/javascript" src="uxMedia213/uxmedia-ie.js"></script>
+        <script type="text/javascript" src="uxMedia213/uxflex.js"></script>
+        <script type="text/javascript" src="uxMedia213/uxflash.js"></script>
+        -->
+
+        <!-- uxMedia213 compressed files -->
+        <script type="text/javascript" src="uxMedia213/build/uxmediapak.js"></script>
+        <script type="text/javascript" src="uxMedia213/build/uxflashpak.js"></script>
+        <script type="text/javascript" src="uxMedia213/uxvismode.js"></script>
+
+        <!-- highlighter code support -->
+        <script type="text/javascript" src="http://tools.dottoro.com/public/highlighter/dottoro-highlighter-v2.js"></script>
+
+
+        <div id="header" cls='x-hidden'>
+            <div id='themect' cls='x-hidden'></div>
+        </div>
+        <!-- Template used for Feed Items -->
+        <div id="preview-tpl" style="display:none;">
+            <div class="post-data"> <span class="post-date">{pubDate:date("M j, Y, g:i a")}</span>
+                <h3 class="post-title">{title}</h3>
+                <h4 class="post-author">by {author:defaultValue("Unknown")}</h4>
+            </div>
+            <div class="post-body">{content:this.getBody}</div>
+            <!--div class="post-body">{description}</div-->
+        </div>
+    </body>
+</html>

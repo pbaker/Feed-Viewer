@@ -1,0 +1,335 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:cv="http://www.channelvision.com/xml" xmlns:dumb="http://www.dummy.com/xml">
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="../ext-3.1.0/resources/css/ext-all.css" />
+        <style>
+            .oopacity-70 {
+    -moz-opacity: 0.7;
+    /** IE8 CSS2.1 parser **/
+     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+     _filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+     opacity: .70 !important;
+     *filter: alpha(opacity=70); /** IE6,7 only **/
+   }
+
+
+@media screen {
+    body {color:#404040;}
+}
+
+@media print {
+    body {color:#000;}
+}
+
+#loading img {
+margin-bottom:5px;
+}
+
+.x-toolbar .x-btn-tl{
+	background-position: -6px 0;
+}
+.x-toolbar .x-btn-tr{
+	background-position: -9px 0;
+}
+.x-toolbar .x-btn-tc{
+	background-position: 0 -9px;
+}
+
+.x-toolbar .x-btn-ml{
+	background-position: -6px -24px;
+}
+.x-toolbar .x-btn-mr{
+	background-position: -9px -24px;
+}
+
+.x-toolbar .x-btn-bl{
+	background-position: -6px -3px;
+}
+.x-toolbar .x-btn-br{
+	background-position: -9px -3px;
+}
+.x-toolbar .x-btn-bc{
+	background-position: 0 -18px;
+}
+
+.ext-ie7 .x-btn button{width:100%;}
+
+#loading-mask{
+	position:absolute;
+	left:0;
+	top:0;
+    width:100%;
+    height:100%;
+    z-index:20000;
+    background-color:white;
+}
+#loading{
+	position:absolute;
+	left:45%;
+	top:40%;
+	padding:2px;
+	z-index:20001;
+    height:auto;
+}
+#loading img {
+    margin-bottom:2px;
+    background:#000 !important;
+}
+#loading .loading-indicator{
+	background:transparent;
+	color:#555;
+	font:bold 13px tahoma,arial,helvetica;
+	padding:10px;
+	margin:0;
+    text-align:center;
+    height:auto;
+}
+
+.demo-action {
+    background-image: url(images/lightning.png) !important;
+}
+.media-chart, .demo-chart {
+    background-image: url(images/chart_curve.png) !important;
+}
+.media-excel {
+    background-image: url(images/page_excel.png) !important;
+}
+.media-flash {
+    background-image: url(images/page_white_flash.png) !important;
+}
+.media-openoffice-txt {
+    background-image: url(images/page_white_text.png) !important;
+}
+.media-pdf {
+    background-image: url(images/page_white_acrobat.png) !important;
+}
+.demo-folder {
+    background-image: url(images/collapse-all.gif) !important;
+}
+.x-tab-with-icon .loading-indicator {
+    margin:0;
+}
+.frustrated {
+    background-image: url(images/brick-wall-101.gif) !important;
+    width:16px; height:16px;
+}
+.shortcut-add {
+    background-image: url(images/add.gif) !important;
+}
+.shortcut-remove {
+    background-image: url(images/delete.gif) !important;
+}
+
+.demo-http {
+    background-image: url(images/html.png) !important;
+}
+.demo-print {
+    background-image: url(images/printer.png) !important;
+}
+.demo-save {
+    background-image: url(images/saving.gif) !important;
+}
+.demo-audio {
+    background-image: url(images/sound.png) !important;
+}
+.demo {
+    background-image: url(images/book.png) !important;
+}
+.demo-donate {
+    width:72px!important; height:44px!important;
+    background-image: url(http://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif) !important;
+}
+.photo {
+    background-image: url(images/images.png) !important;
+}
+.source-icon {
+    background-image: url(images/sheet.gif) !important;
+}
+.frame-open {
+    background-image: url(images/lock_open.png) !important;
+}
+.frame-locked {
+    background-image: url(images/lock.png) !important;
+}
+.chart-print {
+    background-image: url(images/printer.png) !important;
+}
+.chart-saveimage {
+    background-image: url(images/camera.png) !important;
+}
+.chart-refresh {
+    background-image: url(images/done.gif) !important;
+}
+
+.x-tab-scroller-right-over {
+    background-position: -18px 0;
+}
+
+.x-tab-tabmenu-right {
+    background: transparent url(tab-scroller-menu.gif) no-repeat 0 0;
+    border-bottom: 1px solid #8db2e3;
+    width:18px;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:10;
+    cursor:pointer;
+}
+.x-tab-tabmenu-over {
+    background-position: -18px 0;
+}
+.x-tab-tabmenu-disabled {
+    background-position: 0 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}
+a code {
+border:inherit inherit inherit;
+}
+
+.codelife {
+display:block;
+white-space: pre!important;
+}
+
+blockquote {
+border-left:2em solid;
+display:block;
+margin:1.33em 2em;
+padding:0 2em;
+}
+
+.codelife span {display:inline !important;}
+
+.cl-hide {display:none !important;}
+
+
+li.cl-row:hover{ background-color:#deecfd!important;}
+
+a.cl-url { color: #fa8072;
+	background-image: url(images/sheet.gif);
+	}
+span.cl-email {
+	background-image: url(images/email.png);
+}
+span.cl-email, a.cl-url {
+	background-position: left;
+	background-repeat: no-repeat;
+	text-align: right;
+	padding-left:20px;
+	padding-top:3px;
+	padding-bottom:2px;
+	padding-right:2px;
+	background-color: #ffffe0;
+}
+
+.codelife { font-family:monospace; }
+
+.codelife span.comment, .codelife span.blockcomment, .codelife span.sgmlcomment {
+   color: green;font-style:italic;}
+
+.codelife span.string {  color:blue;font-weight:550;}
+
+.codelife a.colorized:hover { color: black!important;}
+
+span.codelife-logo {
+ background-position:3px 3px;
+ background-repeat:no-repeat;
+	text-align : top;
+	height : 26px;
+ padding-left:20px;
+ background-image: url(images/sheet.gif) ;
+}
+
+
+/** JAVASCRIPT **/
+
+.javascript span.brackets {color: #ff0000;}
+.javascript span.symbol { color: #6BCFF7;}
+.javascript span.keywords {color: #0000ff;}
+.javascript span.erb { background: #333;}
+.javascript span.global { color: #1e90ff;}
+.javascript span.regexp { color: #ff8c00;}
+.javascript span.objects { color: #ff0000;}
+.javascript span.Ext { color: #800080;}
+
+/** PHP **/
+
+.php span.brackets {color: #ff0000;}
+.php span.symbol { color: #6BCFF7;}
+.php span.keywords {color: #0000ff;}
+.php span.erb { background: #333;}
+.php span.global { color: #800080;}
+.php span.regexp { color: #ff8c00;}
+.php span.objects { color: #ff0000;}
+.php span.Ext { color: #800080;}
+
+/** HTML **/
+.html span.tag { color:#800080;font-weight:bold;}
+.html span.attribute { font-weight:bold;}
+.html span.doctype { color:#4682B4;font-style:italic;}
+.html span.stylescript { color:#800080;font-weight:bold;}
+
+/** XML **/
+.xml span.tag { color:red;font-weight:bold;}
+.xml span.tagext { color:#e6e6fa;font-weight:bold;}
+.xml span.attribute { font-weight:bold;}
+.xml span.pi { color:#4682B4;font-style:italic;}
+.xml span.doctype { color:#4682B4;font-style:italic;}
+.xml span.cdata { color:#800080;font-weight:bold;}
+
+/** CSS **/
+.css span.selectors { color: #800000;}
+.css span.properties { color: #0000ff;}
+.css span.proprietary { color: #8fbc8b;}
+.css span.units { color: #4169e1;}
+.css span.urls { color: #4169e1;}
+.css span.important { color: red;}
+.css a.colors { }
+.css span.colors { color: red;}
+
+        </style>
+
+        <script type="text/javascript" src="../ext-3.1.0/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="../ext-3.1.0/ext-all-debug.js"></script>
+        <script type="text/javascript" src="uxmedia.js"></script>
+        <script type="text/javascript" src="uxmedia-ie.js"></script>
+        <script type="text/javascript" src="uxflash.js"></script>
+        <script type="text/javascript" src="uxflex.js"></script>
+        <script type="text/javascript" src="uxvismode.js"></script>
+        <script type="text/javascript" src="flowplayer.js"></script>
+        <script type="text/javascript">
+
+            Ext.onReady(function(){
+
+                newWindow = new myFlowPlayer({
+		
+                    title     : 'My Flowplayer',
+                    width     : 645,
+                    height    : 469,
+                    maximizable  : true,
+                    collapsible  : true,
+                    layout    : 'fit'
+                });
+			
+                newWindow.show();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- div id="loading-mask" class="opacity-70"></div>
+        <div id="loading">
+            <div class="loading-indicator"><img src="../images/extanim64.gif" width="64" height="64" style="margin-right:8px;" align="absmiddle"/>
+                Loading...<br /></div>
+        </div-->
+
+    </body>
+</html>

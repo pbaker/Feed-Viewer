@@ -1,0 +1,57 @@
+FeedViewer.js
+
+Defines TEMPLATE for Preview Pane
+- currently the HTML code in view-debg.html"
+
+Creates a Viewport with:
+- top panel (and HTML text), 
+- FeedPanel (left pane),
+- MainPanel (right pane)
+-- which also has Preview pane
+
+FeedSelect to load feed items in MainPanel
+
+Has list of DEFAULT FEEDS
+
+Create event handler for preview pane, so that "Go To Post" will open in new window
+------------------------------------------------------------------------------------
+
+MainPanel.js
+
+Defines layout with:
+- FeedGrid at top (with toolbar)
+- Preview pane at bottom
+
+Create HANDLERS for:
+- load feed from feed URL
+- rowclick, to load record into preview pane
+- rowDOUBLEclick to open record in new tab
+- openTab (at top of MainPanel)
+- movePreview, to switch location between bottom/right/none
+------------------------------------------------------------------------------------
+
+FeedWindow.js
+
+Creates POPUP COMBOBOX to select or enter url of a new feed
+function to validate feed - IMPORTANT!! this could be used to check for BOXEE xmlns
+defines STORE for feed urls
+defines list of DEFAULT FEEDS to add (arbitrary; this should be changed to relevant feeds)
+defines buttons for Add or Cancel Feed
+------------------------------------------------------------------------------------
+
+FeedPanel.js
+
+Defines WEST region
+Defines toolbar with buttons to ADD or REMOVE FEEDS
+creates CONTEXT MENU on right-click IMPORTANT!  Could be used to add "View Channel Information"
+------------------------------------------------------------------------------------
+
+FeedGrid.js
+
+
+Creates data Store 
+=============> (Check xmlNamespace array for Boxee, if found,ADD SUPPORT FOR ALL BOXEE TAGS)
+                This could be a record.data.push ??
+				
+- uses nsXmlReader
+Defines proxy url to get cross-domain feeds (calls server-side code and passes feed url)

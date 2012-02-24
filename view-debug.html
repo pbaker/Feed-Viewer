@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>channelvision.tv</title>
+		
+		<!-- EXT JS & CSS -->
+        <link rel="stylesheet" type="text/css" href="../ext-3.1+/resources/css/ext-all.css" />
+
+        <script type="text/javascript" src="../ext-3.1+/adapter/ext/ext-base.js"></script>
+        <!--script type="text/javascript" src="../ext-3.1+/my-ext-all-debug.js"></script-->
+		<script type="text/javascript" src="../ext-3.1+/ext-all.js"></script>
+        <script type="text/javascript" src="../ext-3.1+/examples/ux/TabCloseMenu.js"></script>
+
+		<!-- Application Support Files -->
+        <script type="text/javascript" src="../state/save-state.php"></script>
+        <script type="text/javascript" src="../state/get-state.php"></script>
+        <script type="text/javascript" src="../state/SessionProvider.js"></script>
+        <script type="text/javascript" src="../ux/Ext.ux.nsXmlReader.js"></script>
+
+		<!-- Feed Viewer JS & CSS -->
+        <script type="text/javascript" src="js/FeedGrid.js"></script>
+        <script type="text/javascript" src="js/FeedPanel.js"></script>
+        <script type="text/javascript" src="js/FeedWindow.js"></script>
+        <script type="text/javascript" src="js/MainPanel.js"></script>
+        <script type="text/javascript" src="js/FeedViewer.js"></script>
+		
+        <link rel="stylesheet" type="text/css" href="css/feed-viewer.css" />		
+
+		<!-- FeedPlayer JS & CSS -->
+        <script type="text/javascript" src="../uxMedia213/uxmedia.js"></script>
+        <script type="text/javascript" src="../uxMedia213/uxmedia-ie.js"></script>
+        <!--script type="text/javascript" src="../uxMedia213/uxflex.js"></script-->
+        <script type="text/javascript" src="../uxMedia213/uxflash.js"></script>
+        <script type="text/javascript" src="../uxMedia213/uxvismode.js"></script>
+        <script type="text/javascript" src="js/FeedPlayer.js"></script>
+		
+		<!-- highlighter code support -->
+		<link rel="stylesheet" type="text/css" href="http://tools.dottoro.com/public/highlighter/dottoro-highlighter-v2.css" />
+		<script type="text/javascript" src="http://tools.dottoro.com/public/highlighter/dottoro-highlighter-v2.js"></script>
+
+    </head>
+    <body>
+        <div id="header">
+            <div style="float:right; margin:5px;" class="x-small-editor">
+            </div>
+        </div>
+        <!-- Template used for Feed Items -->
+        <div id="preview-tpl" style="display:none;">
+            <div class="post-data"> <span class="post-date">{pubDate:date("M j, Y, g:i a")}</span>
+                <h3 class="post-title">{title}</h3>
+                <h4 class="post-author">by {author:defaultValue("Unknown")}</h4>
+            </div>
+            <div class="post-body">{content:this.getBody}</div>
+            <!--div class="post-body">{description}</div-->
+        </div>
+        <div style="display:none">
+            <div id="north-content">
+                <div style='margin-left:10px; margin-top:5px'>
+                    <p>24-Feb-2010 - Our new site is being built using the <a href='http://www.extjs.com' target='_new'>EXT javascript framework</a>.</p><p> When finished, this application will provide an administrative dashboard to a <a href='http://www.boxee.tv' target='_new'>Boxee</a> channel repository hosted by <a href='http://blog.channelvision.tv' target='_new'>channelvision.tv</a></p><p> Please feel free to <a href='mailto:theoriginalpaulbaker@gmail.com'>contact me by email</a> with any questions.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
